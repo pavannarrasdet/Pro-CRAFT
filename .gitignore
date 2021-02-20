@@ -1,0 +1,14 @@
+.settings/
+target/
+.settings\
+target\
+.project
+.classpath
+
+# IDEs and editors
+/.idea
+
+# System Files
+.DS_Store
+
+Onboarding.ui.iml

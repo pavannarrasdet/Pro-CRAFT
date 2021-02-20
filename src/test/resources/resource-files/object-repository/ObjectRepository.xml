@@ -1,0 +1,496 @@
+<!-- Please follow below checklist while adding locators 
+1) <tagName> example "<LoginPage>" should be same as class name "LoginPage.java"
+
+2) Please use given locators as it is to avoid case sensitivity issues while specifying locator name
+id, name, xpath, linkText, cssSelector, tagName, partialLinkText, className, repeater, exactRepeater, binding, exactBinding, model, options, buttonText,
+partialButtonText, cssContainingText
+
+3)While passing cssContainingText, user must specify both tagName and text value separated by ':'
+Example :  <SELECTCORPORATENAME locatorName="cssContainingText">option:$value</SELECTCORPORATENAME>
+ <ADDAPROVIDER locatorName="cssCOntainingText">img:ADD A PROVIDER</ADDAPROVIDER>
+ Note: $ value should be passed when user wants to pass the dynamic value-->
+
+<OR>
+
+    <LoginPage>
+        <OptumIDoremailaddress locatorName="id">userNameId_input</OptumIDoremailaddress>
+        <Password locatorName="id">passwdId_input</Password>
+        <SignIn locatorName="id">SignIn</SignIn>
+        <ErrorText locatorName="cssSelector">span[id='errorMessage-description']</ErrorText>
+        <ApplicationNotAvailable locatorName="xpath">//h1[contains(.,'Application is not available')]
+        </ApplicationNotAvailable>
+    </LoginPage>
+
+    <WelcomePage>
+        <SELECTCORPORATENAME locatorName="cssContainingText">option:$value</SELECTCORPORATENAME>
+        <SELECTTAXID locatorName="cssContainingText">option:$value</SELECTTAXID>
+        <ENTERMPIN locatorName="cssSelector">input[ng-model='vm.selectedProviderObj.mpin']</ENTERMPIN>
+        <GOMPIN locatorName="cssSelector">button[ng-click='vm.getTINsByMPIN()']</GOMPIN>
+        <FieldSet locatorName="tagName">fieldset</FieldSet>
+        <GO locatorName="cssSelector">#submitBtn</GO>
+        <CANCEL locatorName="partialButtonText">Cancel</CANCEL>
+    </WelcomePage>
+
+    <UnrecognizedDevice>
+        <QUESTIONNAME locatorName="id">challengeQuestionList[0].userAnswer</QUESTIONNAME>
+        <SKIP locatorName="id">ac</SKIP>
+        <NEXT locatorName="id">authQuesSubmitButton</NEXT>
+        <QUESTIONLABEL locatorName="id">challengeQuestionLabelId</QUESTIONLABEL>
+    </UnrecognizedDevice>
+
+    <DashBoardPage>
+        <UL-LIST locatorName="cssSelector">ul[role='listbox'] li</UL-LIST>
+        <HEADERINFO-WELCOME-SECTION locatorName="xpath">//h6[contains(.,'Welcome')]</HEADERINFO-WELCOME-SECTION>
+        <HEADERINFO-LOGO-SECTION locatorName="xpath">//img[@alt='United Health Care Logo']</HEADERINFO-LOGO-SECTION>
+        <HEADERINFO-LOGOUT-SECTION locatorName="xpath">//button[contains(.,'Logout')]</HEADERINFO-LOGOUT-SECTION>
+        <NETWORK-PARTICIPATION locatorName="xpath">//h6[contains(.,'NETWORK PARTICIPATION')]</NETWORK-PARTICIPATION>
+        <RIBBON-SECTION-GROUP-DDN locatorName="xpath">//div[@data-id='add-provider-group-dropdown']
+        </RIBBON-SECTION-GROUP-DDN>
+        <RIBBON-SECTION-SELECTED-GROUP locatorName="id">select-selectedGroup</RIBBON-SECTION-SELECTED-GROUP>
+        <RIBBON-SECTION-TIN-DDN locatorName="xpath">//div[@data-id='add-provider-tin-dropdown']</RIBBON-SECTION-TIN-DDN>
+        <RIBBON-SECTION-SELECTED-TIN locatorName="id">select-selectedTin</RIBBON-SECTION-SELECTED-TIN>
+        <RIBBON-SECTION-GROUP-DDN-LBL locatorName="xpath">//label[text()='Group']</RIBBON-SECTION-GROUP-DDN-LBL>
+        <RIBBON-SECTION-TIN-DDN-LBL locatorName="xpath">//label[text()='Tax Identification Number (TIN)']
+        </RIBBON-SECTION-TIN-DDN-LBL>
+        <DASHBOARD-SECTION-GROUP-LBL locatorName="xpath">//span[text()='Group']</DASHBOARD-SECTION-GROUP-LBL>
+        <DASHBOARD-SECTION-TIN-LBL locatorName="xpath">//h5[text()='Tax Identification Number:']</DASHBOARD-SECTION-TIN-LBL>
+        <DASHBOARD-SECTION-SELECTED-GROUP-LBL locatorName="xpath">//span[text()='$value']</DASHBOARD-SECTION-SELECTED-GROUP-LBL>
+        <DASHBOARD-SECTION-SELECTED-TIN-LBL locatorName="xpath">//h5[text()='Tax Identification Number: # $value']</DASHBOARD-SECTION-SELECTED-TIN-LBL>
+        <DASHBOARD-SECTION-SEARCH-PROVIDERS-TXT locatorName="xpath">//div[@data-id='add-provider-search-tin']</DASHBOARD-SECTION-SEARCH-PROVIDERS-TXT>
+        <DASHBOARD-SECTION-SEARCH-PROVIDERS-IMG locatorName="xpath">
+            //div[@data-id='add-provider-search-tin']//img[@alt='search icon']
+        </DASHBOARD-SECTION-SEARCH-PROVIDERS-IMG>
+        <ADD-PROVIDER-SECTION-MSG locatorName="xpath">//h6[contains(.,'Add a new provider by clicking on the')]
+        </ADD-PROVIDER-SECTION-MSG>
+        <ADD-PROVIDER-SECTION-BTN locatorName="xpath">//button[@data-id='add-provider-btn']</ADD-PROVIDER-SECTION-BTN>
+        <ADD-PROVIDER-DLG locatorName="cssSelector">div[data-id='add-provider-dialog-title']</ADD-PROVIDER-DLG>
+        <GRAY-BAR-BACK-TO-NTWRK-PARTC-DASHBRD-LBL locatorName="xpath">//button//span[text()='Back to Network Participation Dashboard']</GRAY-BAR-BACK-TO-NTWRK-PARTC-DASHBRD-LBL>
+        <GRAY-BAR-RFP-LBL locatorName="xpath">//h6[text()='REQUEST FOR PARTICIPATION']</GRAY-BAR-RFP-LBL>
+        <DASHBOARD-SECTION-HEADER-NAMES locatorName="xpath">//h6[contains(.,'$value')]></DASHBOARD-SECTION-HEADER-NAMES>
+        <DASHBOARD-SECTION-PROVIDER-NAME-HEADER locatorName="cssSelector">h6[data-id='dashboard-provider-name-heading']</DASHBOARD-SECTION-PROVIDER-NAME-HEADER>
+        <DASHBOARD-SECTION-PRIMARY-PRACTICE-LOCATION locatorName="cssSelector">h6[data-id='dashboard-primary-location-heading']</DASHBOARD-SECTION-PRIMARY-PRACTICE-LOCATION>
+        <DASHBOARD-SECTION-REQUEST-CREATED locatorName="cssSelector">h6[data-id='dashboard-request-created-heading']</DASHBOARD-SECTION-REQUEST-CREATED>
+        <DASHBOARD-SECTION-CREDENTIALS-VERIFIED locatorName="cssSelector">h6[data-id='dashboard-cred-verified-heading']</DASHBOARD-SECTION-CREDENTIALS-VERIFIED>
+        <DASHBOARD-SECTION-CONTRACT-INITIATED locatorName="cssSelector">h6[data-id='dashboard-contract-initiated-heading']</DASHBOARD-SECTION-CONTRACT-INITIATED>
+        <DASHBOARD-SECTION-CONTRACT-FINALIZED locatorName="cssSelector">h6[data-id='dashboard-contract-finalized-heading']</DASHBOARD-SECTION-CONTRACT-FINALIZED>
+        <DASHBOARD-SECTION-TAKE-ACTION locatorName="cssSelector">h6[data-id='dashboard-take-action-heading']</DASHBOARD-SECTION-TAKE-ACTION>
+        <DASHBOARD-SECTION-PROVIDER-NAME-DATA locatorName="xpath">//table/tbody/tr[1]/th/h6[@data-id='dashboard-provider-name']</DASHBOARD-SECTION-PROVIDER-NAME-DATA>
+        <DASHBOARD-SECTION-SPECIALTY-DATA locatorName="xpath">//table/tbody/tr[1]/th/h6[@data-id='dashboard-specialty']</DASHBOARD-SECTION-SPECIALTY-DATA>
+        <DASHBOARD-SECTION-NPI-DATA locatorName="xpath">//table/tbody/tr[1]/th/h6[@data-id='dashboard-npi']</DASHBOARD-SECTION-NPI-DATA>
+        <DASHBOARD-SECTION-REQUEST-CREATED-ICON locatorName="cssSelector">table > tbody > tr:nth-child(1) > td:nth-child(3) > div > svg</DASHBOARD-SECTION-REQUEST-CREATED-ICON>
+        <DASHBOARD-SECTION-TAKE-ACTION-BTN locatorName="xpath">//table/tbody/tr[1]/td[6]/button[@data-id='dashboard-take-action-button']</DASHBOARD-SECTION-TAKE-ACTION-BTN>
+        <DASHBOARD-LOGOUT-BTN locatorName="xpath">//button[@data-id='logout-btn']</DASHBOARD-LOGOUT-BTN>
+       	<DASHBOARD-CONTENT-SECTION locatorName="xpath">//div[@data-id='add-provider-dashboard-section']</DASHBOARD-CONTENT-SECTION>
+        <DASHBOARD-CONTENT-RECORDS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-')]</DASHBOARD-CONTENT-RECORDS>
+        <DASHBOARD-CONTENT-RECORD locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//p[text()='$pValue']</DASHBOARD-CONTENT-RECORD>
+        <DASHBOARD-HEAD-CONTENT-RECORD locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//h6[text()='$h6Value']</DASHBOARD-HEAD-CONTENT-RECORD>
+        <DASHBOARD-CONTENT-RECORD-LBL locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//p[text()='$pValue']/Strong[text()='$strngVal']</DASHBOARD-CONTENT-RECORD-LBL>
+        <DASHBOARD-CONTENT-RECORD-GREEN-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='green-complete-icon']</DASHBOARD-CONTENT-RECORD-GREEN-STATUS>
+        <DASHBOARD-CONTENT-RECORD-GRAY-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='progress-closed-icon']</DASHBOARD-CONTENT-RECORD-GRAY-STATUS>
+        <DASHBOARD-CONTENT-RECORD-IN-PROGRESS-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='in-progress-icon']</DASHBOARD-CONTENT-RECORD-IN-PROGRESS-STATUS>
+        <DASHBOARD-CONTENT-RECORD-IN-COMPLETE-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='incomplete-icon']</DASHBOARD-CONTENT-RECORD-IN-COMPLETE-STATUS>
+        <DASHBOARD-CONTENT-RECORD-DIV locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]</DASHBOARD-CONTENT-RECORD-DIV>
+        <DASHBOARD-CONTENT-RECORD-BTN locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//button</DASHBOARD-CONTENT-RECORD-BTN>
+        <DASHBOARD-H6CONTENT locatorName="xpath">//h6[text()='$value']</DASHBOARD-H6CONTENT>
+        <DASHBOARD-AddPrvInfo_CONTENT locatorName="xpath">//h6[@data-id='add-provider-dashboard-message']</DASHBOARD-AddPrvInfo_CONTENT>
+        <DASHBOARD-CONTENT-RECORD-Not-Rqrd-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='not-required-icon']</DASHBOARD-CONTENT-RECORD-Not-Rqrd-STATUS>
+		<DASHBOARD-CONTENT_RECORD-PROVIDER-NAME locatorName="xpath">//h6[@data-id='dashboard-provider-name']</DASHBOARD-CONTENT_RECORD-PROVIDER-NAME>
+		<DASHBOARD-CONTENT-RECORD-PROGRESS-CLOSE-STATUS locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div[contains(.,'$divValue')]//*[@data-id='progress-closed-icon']</DASHBOARD-CONTENT-RECORD-PROGRESS-CLOSE-STATUS>
+		<DASHBOARD-CONTENT-RECORD-PROVIDER-CONTACT-US-LINK locatorName="xpath">//div[@data-id='add-provider-dashboard-row-$rIndex']//div//p[text()='Contact ']/span[@data-id='dashboard-provider-contact-us']</DASHBOARD-CONTENT-RECORD-PROVIDER-CONTACT-US-LINK>
+		<DASHBOARD-CONTENT-RECORD-PROVIDER-CONTACT-US-NUMBER locatorName="xpath">//div[@data-id='add-provider-dashboard-row-$rIndex']//div//p/span[text()='$spanValue']</DASHBOARD-CONTENT-RECORD-PROVIDER-CONTACT-US-NUMBER>
+		<DASHBOARD-CONTENT-RECORD-PROVIDER-ACTION-BUTTON locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//button[@data-id='dashboard-take-action-button']</DASHBOARD-CONTENT-RECORD-PROVIDER-ACTION-BUTTON>
+		<DASHBOARD-CONTENT-RECORD locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]</DASHBOARD-CONTENT-RECORD>
+		<DASHBOARD-CONTENT-RECORD-DATA locatorName="xpath">//div[contains(@data-id,'add-provider-dashboard-row-$rIndex')]//div//p[text()='$pValue']</DASHBOARD-CONTENT-RECORD-DATA>
+    	<DASHBOARD-CONTENT-RECORD-PROVIDER-INELIGIBLE-DATE locatorName="xpath">//div[@data-id='add-provider-dashboard-row-$rIndex']//div/span[text()='$spanValue']</DASHBOARD-CONTENT-RECORD-PROVIDER-INELIGIBLE-DATE>
+    </DashBoardPage>
+
+    <AddProviderPage>
+        <ADD-PROVIDER-LNAME-TXT locatorName="cssSelector">div[data-id='add-provider-lname-input'] input</ADD-PROVIDER-LNAME-TXT>
+        <ADD-PROVIDER-FNAME-TXT locatorName="cssSelector">div[data-id='add-provider-fname-input'] input
+        </ADD-PROVIDER-FNAME-TXT>
+        <ADD-PROVIDER-MNAME-TXT locatorName="cssSelector">div[data-id='add-provider-mname-input'] input
+        </ADD-PROVIDER-MNAME-TXT>
+        <ADD-PROVIDER-CAQHID-TXT locatorName="cssSelector">div[data-id='add-provider-caqh-input'] input
+        </ADD-PROVIDER-CAQHID-TXT>
+        <ADD-PROVIDER-NPI-TXT locatorName="cssSelector">div[data-id='add-provider-npi-input'] input
+        </ADD-PROVIDER-NPI-TXT>
+        <ADD-PROVIDER-SPECIALTY-DDN locatorName="cssSelector">div[data-id='add-provider-specialty-input']
+        </ADD-PROVIDER-SPECIALTY-DDN>
+        <ADD-PROVIDER-PRACTICE-SETTING-DDN locatorName="cssSelector">div[data-id='add-provider-practice-input']
+        </ADD-PROVIDER-PRACTICE-SETTING-DDN>
+        <ADD-PROVIDER-PRACTICE-SETTING-TXT locatorName="cssSelector">div[data-id='add-provider-practice-input'] input</ADD-PROVIDER-PRACTICE-SETTING-TXT>
+        <ADD-PROVIDER-SPECIALTY-TXT locatorName="cssSelector">div[data-id='add-provider-specialty-input'] input</ADD-PROVIDER-SPECIALTY-TXT>
+        <ADD-PROVIDER-PRIMARY-PRACTICE-ZIP-CODE-TXT locatorName="cssSelector">div[data-id='add-provider-zip-code-input']
+            input
+        </ADD-PROVIDER-PRIMARY-PRACTICE-ZIP-CODE-TXT>
+        <ADD-PROVIDER-DEGREE-TXT locatorName="cssSelector">div[data-id='add-provider-degree-input'] input</ADD-PROVIDER-DEGREE-TXT>
+        <ADD-PROVIDER-PRIMARY-PRACTICE-STATE-TXT locatorName="cssSelector">div[data-id='add-provider-state-input'] input</ADD-PROVIDER-PRIMARY-PRACTICE-STATE-TXT>
+        <ADD-PROVIDER-CANCEL-BTN locatorName="cssSelector">button[data-id='dialog-cancel-btn']</ADD-PROVIDER-CANCEL-BTN>
+        <ADD-PROVIDER-CONTINUE-BTN locatorName="cssSelector">button[data-id='dialog-continue-btn']
+        </ADD-PROVIDER-CONTINUE-BTN>
+        <ADD-PROVIDER-CLOSE-ICON-BTN locatorName="cssSelector">button[data-id='close-icon']
+        </ADD-PROVIDER-CLOSE-ICON-BTN>
+        <ADD-PROVIDER-CAQH-TOOL-TIP-ICON locatorName="cssSelector">label[data-id='add-provider-caqh-label'] img
+        </ADD-PROVIDER-CAQH-TOOL-TIP-ICON>
+        <ADD-PROVIDER-PRAC-SETNG-TOOL-TIP-ICON locatorName="cssSelector">label[data-id='add-provider-practice-label']
+            img
+        </ADD-PROVIDER-PRAC-SETNG-TOOL-TIP-ICON>
+        <ADD-PROVIDER-PRE-CRED-CHK-TXT locatorName="xpath">//h6[text()='Pre-Credentialing Check']</ADD-PROVIDER-PRE-CRED-CHK-TXT>
+        <ADD-PROVIDER-CAQH-CHK-TXT locatorName="xpath">//p[text()='Enter a CAQH ID below to check if credentialing is required']</ADD-PROVIDER-CAQH-CHK-TXT>
+        <ADD-PROVIDER-IMPORTED_CAQH-TXT locatorName="xpath">//h6[text()='Imported From CAQH']</ADD-PROVIDER-IMPORTED_CAQH-TXT>
+        <ADD-PROVIDER-NEEDS-ATTN-TXT locatorName="xpath">//h6[text()='Needs Attention']</ADD-PROVIDER-NEEDS-ATTN-TXT>
+        <ADD-PROVIDER-TOOL-TIP-ICON locatorName="cssSelector">svg[data-id='pre-cred-msg-tooltip-icon']</ADD-PROVIDER-TOOL-TIP-ICON>
+        <ADD-PROVIDER-CHK_MARK-ICON locatorName="cssSelector">svg[data-id='add-provider-success-icon']</ADD-PROVIDER-CHK_MARK-ICON>
+        <ADD-PROVIDER-WARNING-ICON locatorName="cssSelector">svg[data-id='add-provider-warning-icon']</ADD-PROVIDER-WARNING-ICON>
+        <ADD-PROVIDER-SPECIALTY-DEFAULT-VALUE locatorName="xpath">
+            //div[@data-id='add-provider-specialty-input']/div/div
+        </ADD-PROVIDER-SPECIALTY-DEFAULT-VALUE>
+        <ADD-PROVIDER-SPECIALTY-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li
+        </ADD-PROVIDER-SPECIALTY-DDN-LIST>
+        <ADD-PROVIDER-PRAC-SETNG-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li
+        </ADD-PROVIDER-PRAC-SETNG-DDN-LIST>
+        <ADD-PROVIDER-PRAC-SETNG-DEFAULT-VALUE locatorName="xpath">
+            //div[@data-id='add-provider-practice-input']/div/div
+        </ADD-PROVIDER-PRAC-SETNG-DEFAULT-VALUE>
+        <ADD-PROVIDER-CAQHID-ERR-MSG locatorName="cssSelector">p[data-id='caqhId-error-msg']
+        </ADD-PROVIDER-CAQHID-ERR-MSG>
+        <ADD-PROVIDER-NPI-ERR-MSG locatorName="cssSelector">p[data-id='npi-error-msg']</ADD-PROVIDER-NPI-ERR-MSG>
+        <ADD-PROVIDER-CONTINUE-BTN locatorName="cssSelector">button[data-id='dialog-continue-btn']
+        </ADD-PROVIDER-CONTINUE-BTN>
+        <ADD-PROVIDER-CHK_PROVIDER-BTN locatorName="cssSelector">button[data-id='dialog-check-provider-btn']</ADD-PROVIDER-CHK_PROVIDER-BTN>
+        <ADD-PROVIDER-PRIMARY-PRACTICE-ZIP-CODE-ERR-MSG locatorName="cssSelector">p[data-id='zipCode-error-msg']
+        </ADD-PROVIDER-PRIMARY-PRACTICE-ZIP-CODE-ERR-MSG>
+        <ADD-PROVIDER-CAQH-Err-Icon locatorName="cssSelector">div[data-id='add-provider-caqh-input'] svg</ADD-PROVIDER-CAQH-Err-Icon>
+        <Add-PROVIDER-CAQH-API-Err-Msg locatorName="xpath">//div[@data-id='add-provider-modal-warning-container']//div[text()='$value']</Add-PROVIDER-CAQH-API-Err-Msg>
+        <Add-PROVIDER-CAQH-API-Err-Msg-Body locatorName="xpath">//div[@data-id='add-provider-modal-warning-container']</Add-PROVIDER-CAQH-API-Err-Msg-Body>
+        <Add-PROVIDER-CAQH-API-Err-MsgBox locatorName="xpath">//div[@data-id='add-provider-modal-warning-container']</Add-PROVIDER-CAQH-API-Err-MsgBox>
+        <ADD-PROVIDER-GOTO-CAQH-LNK locatorName="xpath">//a[text()='Go To CAQH']</ADD-PROVIDER-GOTO-CAQH-LNK>
+        <ADD-PROVIDER-CHK-PRV-BTN locatorName="xpath">//button[@data-id='dialog-check-provider-btn']</ADD-PROVIDER-CHK-PRV-BTN>
+    </AddProviderPage>
+
+    <CredentialingDecisionPage>
+        <CRED-DECISION-CRED-MESSAGE-DISPLAY locatorName="xpath">//h6[@data-id='cred-result-msg']
+        </CRED-DECISION-CRED-MESSAGE-DISPLAY>
+        <CRED-DECISION-CRED-MESSAGE-DISPLAY_1 locatorName="xpath">//p[contains(.,' for')]
+        </CRED-DECISION-CRED-MESSAGE-DISPLAY_1>
+        <CRED-DECISION-CRED-DECISION-DISPLAY locatorName="cssSelector">span[data-id='cred-result-decision']
+        </CRED-DECISION-CRED-DECISION-DISPLAY>
+        <CRED-DECISION-CAQH-MESSAGE-DISPLAY locatorName="cssSelector">h6[data-id='cred-result-caqh-msg']
+        </CRED-DECISION-CAQH-MESSAGE-DISPLAY>
+        <CRED-DECISION-GREEN-TICK locatorName="cssSelector">svg[data-id='cred-result-green-check']
+        </CRED-DECISION-GREEN-TICK>
+        <CRED-DECISION-CAQH-LOGO locatorName="cssSelector">img[data-id='caqh-logo']</CRED-DECISION-CAQH-LOGO>
+        <CRED-DECISION-NAME-DISPLAY locatorName="cssSelector">h5[data-id='cred-result-name']</CRED-DECISION-NAME-DISPLAY>
+        <CRED-DECISION-X-BTN locatorName="cssSelector">button[data-id='close-icon']</CRED-DECISION-X-BTN>
+        <CRED-DECISION-CANCEL-BTN locatorName="cssSelector">button[data-id='dialog-cancel-btn']</CRED-DECISION-CANCEL-BTN>
+        <CRED-DECISION-CONTINUE-BTN locatorName="cssSelector">button[data-id='dialog-continue-btn']</CRED-DECISION-CONTINUE-BTN>
+         <CRED-DECISION-RED-EXCLAMATION locatorName="cssSelector">svg[data-id='behavioral-health-result-error']
+        </CRED-DECISION-RED-EXCLAMATION>
+        <CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-MESSAGE1 locatorName="cssSelector">h6[data-id='behavioral-health-result-msg-one']
+        </CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-MESSAGE1>
+        <CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACT locatorName="cssSelector">h6[data-id='behavioral-health-result-contact']
+        </CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACT>  
+        <CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-MESSAGE2 locatorName="cssSelector">h5[data-id='behavioral-health-result-msg-two']
+        </CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-MESSAGE2>
+        <CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACT locatorName="cssSelector">h5[data-id='behavioral-health-result-contact']
+        </CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACT>
+        <CRED-NOT-ALLOWED-ERR-ICON locatorName="cssSelector">svg[data-id='cred-not-allowed-error-icon']</CRED-NOT-ALLOWED-ERR-ICON> 
+        <CRED-NOT-ALLOWED-INFO-MSG locatorName="cssSelector">span[data-id="cred-not-allwed-info-msg"]</CRED-NOT-ALLOWED-INFO-MSG>
+        <CRED-NOT-ALLOWED-CALL-US-INFO-MSG locatorName="cssSelector">h6[data-id="cred-not-allowed-call-us-info-msg"]</CRED-NOT-ALLOWED-CALL-US-INFO-MSG>
+        <CRED-NOT-ALLOWED-PHONE-NUM locatorName="cssSelector">span[data-id="cred-not-allowed-phone-num"]</CRED-NOT-ALLOWED-PHONE-NUM>
+        <CRED-NOT-ALLOWED-PHONE-ICON locatorName="cssSelector">svg[data-id="cred-not-allowed-phone-icon"]</CRED-NOT-ALLOWED-PHONE-ICON>
+        <CRED-DECISION-CLOSE-BTN locatorName="cssSelector">button[data-id='dialog-close-btn']</CRED-DECISION-CLOSE-BTN>
+    	<CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACTUS-LINK locatorName="xpath">//h6//span[text()='Optum Behavioral Health']</CRED-DECISION-BEHAVIORAL-HEALTH-RESULT-CONTACTUS-LINK>
+    	<CRED-DECISION-PHYSICAL-HEALTH-RESULT-CONTACTUS-LINK locatorName="xpath">//h6//span[text()='Optum Physical Health']</CRED-DECISION-PHYSICAL-HEALTH-RESULT-CONTACTUS-LINK>
+    </CredentialingDecisionPage>
+    
+   <RFPPage>
+    	<UL-LIST locatorName="cssSelector">ul[role='listbox'] li</UL-LIST>
+   		<GRAYBAR-BACKTONWPARTDASHBRD locatorName="xpath">//button[@data-id='rfp-back-btn']</GRAYBAR-BACKTONWPARTDASHBRD>
+   		<GRAYBAR-RQSTFRPARTLBL locatorName="xpath">//h6[text()='REQUEST FOR PARTICIPATION']</GRAYBAR-RQSTFRPARTLBL>
+   		<DASHBRD-CAQHINFO locatorName="xpath">//span[text()='$value']</DASHBRD-CAQHINFO>
+   		<PRV-INFO-LNAME locatorName="name">lastName</PRV-INFO-LNAME>
+   		<PRV-INFO-FNAME locatorName="name">firstName</PRV-INFO-FNAME>
+   		<PRV-INFO-MNAME locatorName="name">middleName</PRV-INFO-MNAME>
+   		<PRV-INFO-SUFFIX-Txt locatorName="name">suffix</PRV-INFO-SUFFIX-Txt>
+   		<PRV-INFO-SUFFIX locatorName="id">select-suffix</PRV-INFO-SUFFIX>
+   		<PRV-INFO-SUFFIX-List-Items locatorName="cssSelector">ul[role='listbox'] li</PRV-INFO-SUFFIX-List-Items>
+   		<PRV-INFO-DOB locatorName="name">dob</PRV-INFO-DOB>
+   		<PRV-INFO-GENDER locatorName="id">select-gender</PRV-INFO-GENDER>
+   		<PRV-INFO-GENDER-Txt locatorName="name">gender</PRV-INFO-GENDER-Txt>
+   		<PRV-INFO-GENDER-List-Items locatorName="cssSelector">ul[role='listbox'] li</PRV-INFO-GENDER-List-Items>
+   		<PRV-INFO-SPCLTY locatorName="id">select-specialty</PRV-INFO-SPCLTY>
+   		<PRV-INFO-SPCLTY-Txt locatorName="name">specialty</PRV-INFO-SPCLTY-Txt>
+   		<PRV-INFO-NPI locatorName="name">npi</PRV-INFO-NPI>
+   		<PRV-INFO-CAQHID locatorName="name">caqhId</PRV-INFO-CAQHID>
+   		<PRV-INFO-PCP-DESGNTION-RADIO locatorName="xpath">//input[@name='pcp' and @value='$value']</PRV-INFO-PCP-DESGNTION-RADIO>
+   		<PRV-INFO-DEGRE locatorName="id">select-degree</PRV-INFO-DEGRE>
+   		<PRV-INFO-DEGRE-Txt locatorName="name">degree</PRV-INFO-DEGRE-Txt>
+   		<PRV-INFO-DEGRE-List-Items locatorName="cssSelector">ul[role='listbox'] li</PRV-INFO-DEGRE-List-Items>
+   		<PRV-INFO-BRD-CERTFD-RADIO locatorName="xpath">//input[@name='boardCert' and @value='$value']</PRV-INFO-BRD-CERTFD-RADIO>
+   		<PRV-INFO-EXP-DATE locatorName="name">expDate</PRV-INFO-EXP-DATE>
+   		<Bubble-Nav-Pract-Info locatorName="xpath">//div[@data-id='rfp-step-prov-info']</Bubble-Nav-Pract-Info>
+   		<Bubble-Nav-SVG locatorName="tagName">svg</Bubble-Nav-SVG>
+   		<Bubble-Nav-HSPTL-AFFL locatorName="xpath">//div[@data-id='rfp-step-hosp-aff']</Bubble-Nav-HSPTL-AFFL>
+   		<HSP-AFL-HEADING-LBL locatorName="xpath">//h6[text()=' Hospital Affiliation ']</HSP-AFL-HEADING-LBL>
+   		<HSP-AFL-ADDAFFLHSP-BTN locatorName="xpath">//*[@data-id='hospital-affiliation-add-icon']</HSP-AFL-ADDAFFLHSP-BTN>
+   		<HSP-AFL-CURNT-HSP-AFFL-LBL locatorName="xpath">//h6[text()=' Current Affiliations:']</HSP-AFL-CURNT-HSP-AFFL-LBL>
+   		<HSP-AFL-NO-AFFLTD-HSP-LBL locatorName="xpath">//h6[text()='No Affiliated Hospital Available']</HSP-AFL-NO-AFFLTD-HSP-LBL>
+   		<HSP-AFL-HEDR-LBL locatorName="xpath">//th[text()='$value']</HSP-AFL-HEDR-LBL>
+   		<HSP-AFL-DLG-TITLE locatorName="xpath">//div[@data-id='add-hospital-dialog-title']</HSP-AFL-DLG-TITLE>
+   		<HSP-AFL-EDIT-DLG-TITLE locatorName="xpath">//div[@data-id='add-hospital-dialog-title']</HSP-AFL-EDIT-DLG-TITLE>
+   		<HSP-AFL-DEL-DLG-TITLE locatorName="xpath">//div[@data-id='confirmation-dialog-title']</HSP-AFL-DEL-DLG-TITLE>
+   		<HSP-AFL-VIEW-ICON locatorName="xpath">//*[@data-id='hospital-affiliation-description-icon']</HSP-AFL-VIEW-ICON>
+   		<HSP-AFL-EDIT-ICON locatorName="xpath">//*[@data-id='hospital-affiliation-create-icon']</HSP-AFL-EDIT-ICON>
+   		<HSP-AFL-CLEAR-ICON locatorName="xpath">//*[@data-id='hospital-affiliation-clear-icon']</HSP-AFL-CLEAR-ICON>
+   		<HSP-AFL-DASHES-ICON locatorName="xpath">//*[@data-id='hospital-affiliation-dashes']</HSP-AFL-DASHES-ICON>
+   		<HSP-AFL-NAME-CELL-VALUE locatorName="xpath">//th[text()='$value']</HSP-AFL-NAME-CELL-VALUE>
+   		<HSP-AFL-CELL-VALUE locatorName="xpath">//td[text()='$value']</HSP-AFL-CELL-VALUE>
+   		<LICENSE-CELL-VALUE locatorName="xpath">//td[text()='$value']</LICENSE-CELL-VALUE>
+   		<LICENSE-PAGE locatorName="xpath">//span[text()='Licenses']</LICENSE-PAGE>
+   		<LICENSE-HEADER locatorName="xpath">//h6[text()='Licenses']</LICENSE-HEADER>
+   		<LICENSE-DLG-TITLE locatorName="xpath">//div[@data-id='add-license-dialog-title']</LICENSE-DLG-TITLE>
+   		<LICENSE-EDIT-DLG-TITLE locatorName="xpath">//div[@data-id='add-license-dialog-title']</LICENSE-EDIT-DLG-TITLE>
+   		<LICENSE-DEL-DLG-TITLE locatorName="xpath">//div[@data-id='confirmation-dialog-title']</LICENSE-DEL-DLG-TITLE>
+    	<ADD-LICENSE-ICON locatorName="cssSelector">button[data-id='rfp-license-add-button'] svg</ADD-LICENSE-ICON>
+    	<ADD-LICENSE-BTN locatorName="xpath">//p[text()='Add License']</ADD-LICENSE-BTN>
+    	<PRV-INFO-DATE-ERR-MSG locatorName="xpath">//p[text()='$value']</PRV-INFO-DATE-ERR-MSG>
+    	<PRV-INFO-DOB-ERR-MSG locatorName="xpath">//p[@data-id='dob-error-msg']</PRV-INFO-DOB-ERR-MSG>
+    	<BUBBLE-NAV-ATTACHMENTS locatorName="xpath">//div[@data-id='rfp-step-attachments']</BUBBLE-NAV-ATTACHMENTS>
+    	<BUBBLE-NAV-LICENSES locatorName="xpath">//div[@data-id='rfp-step-license']</BUBBLE-NAV-LICENSES>
+    	<BUBBLE-NAV-LOCATIONS locatorName="xpath">//div[@data-id='rfp-step-loc']</BUBBLE-NAV-LOCATIONS>
+    	<BUBBLE-NAV-CONTRACT-INFO locatorName="xpath">//div[@data-id='rfp-step-contract-info']</BUBBLE-NAV-CONTRACT-INFO>
+    	<ATTACHMENTS-HEADER locatorName="xpath">//h6[text()=' Attachments ']</ATTACHMENTS-HEADER>
+    	<ATTACHMENT-TYPE locatorName="xpath">//th[text()='Attachment Type']</ATTACHMENT-TYPE>
+    	<FILENAME locatorName="xpath">//th[text()='File Name']</FILENAME>
+    	<FILESIZE locatorName="xpath">//th[text()='File Size']</FILESIZE>
+    	<ACTIONS locatorName="xpath">//th[text()='Actions']</ACTIONS>
+    	<ATTACHMENTMESSAGE locatorName="xpath">//p[text()='Maximum File Size: 100MB']</ATTACHMENTMESSAGE>
+    	<ATTACHMENTINFOMESSAGE locatorName="xpath">//div[@data-id='rfp-attachment-info-msg']</ATTACHMENTINFOMESSAGE>
+    	<UPLOAD locatorName="name">fileUpload_0</UPLOAD>
+    	<UPLOADED locatorName="xpath"></UPLOADED>
+    	<DISPLAYTYPE locatorName="xpath">//div[text()='$value']</DISPLAYTYPE>
+    	<DISPLAYSIZE locatorName="xpath">//td[text()='$value']</DISPLAYSIZE>
+    	<FILELIMITERROR locatorName="cssContainingText">span:filelimiterror</FILELIMITERROR>
+    	<FILETYPEERROR locatorName="cssContainingText">span:filetypeerror</FILETYPEERROR>
+    	<FILEVIRUSERROR locatorName="xpath">//div[text()='Error: This file may contain a virus. Please choose another file.']</FILEVIRUSERROR>
+    	<HSP-AFL-ROW-ELEMENTS locatorName="xpath">//tr[contains(@data-id,'hospital-row-')]</HSP-AFL-ROW-ELEMENTS>
+    	<HSP-AFL-ROW-ELEMENT locatorName="xpath">//tr[@data-id='hospital-row-$index']</HSP-AFL-ROW-ELEMENT>
+    	<HSP-AFL-ROW-EDITICON locatorName="xpath">//tr[@data-id='hospital-row-$index']//*[@data-id='hospital-affiliation-create-icon']</HSP-AFL-ROW-EDITICON>
+    	<HSP-AFL-ROW-DELICON locatorName="xpath">//tr[@data-id='hospital-row-$index']//*[@data-id='hospital-affiliation-clear-icon']</HSP-AFL-ROW-DELICON>
+    	<HSP-AFL-HEADER-ELEMENTS locatorName="xpath">//div//table/thead//th</HSP-AFL-HEADER-ELEMENTS>
+    	<HSP-AFL-NAME-CELL-VALUE-DYN locatorName="xpath">//tr[@data-id='hospital-row-0']//p[text()]</HSP-AFL-NAME-CELL-VALUE-DYN>
+    	<HSP-AFL-CELL-Text-IN locatorName="xpath">//tr[@data-id='hospital-row-$rowIndex']/td[$cellIndex]</HSP-AFL-CELL-Text-IN>
+    	<LICENSE-ROW-ELEMENTS locatorName="xpath">//tr[contains(@data-id,'licenses-row-')]</LICENSE-ROW-ELEMENTS>
+    	<LICENSE-ROW-ELEMENT locatorName="xpath">//tr[@data-id='licenses-row-$index']</LICENSE-ROW-ELEMENT>
+    	<LICENSE-ROW-EDITICON locatorName="xpath">//tr[@data-id='licenses-row-$index']//*[@data-id='edit-icon']</LICENSE-ROW-EDITICON>
+    	<LICENSE-ROW-DELICON locatorName="xpath">//tr[@data-id='licenses-row-$index']//*[@data-id='close-icon']</LICENSE-ROW-DELICON>
+    	<LICENSE-HEADER-ELEMENTS locatorName="xpath">//table/thead//th</LICENSE-HEADER-ELEMENTS>
+    	<LICENSE-CELL-Text locatorName="xpath">//tr[@data-id='licenses-row-$rowIndex']/td[$cellIndex]</LICENSE-CELL-Text>
+    	<LOCATIONS-PRIMARY-PRACT-STATE locatorName="id">select-primary-practice-state</LOCATIONS-PRIMARY-PRACT-STATE>
+    	<LOCATIONS-HEADING locatorName="xpath">//h6[text()='$value']</LOCATIONS-HEADING>
+    	<LOCATIONS-HEADER locatorName="xpath">//th[text()='$value']</LOCATIONS-HEADER>
+    	<LOCATIONS-CELL locatorName="xpath">//td//p[text()='$value']</LOCATIONS-CELL>
+    	<CONTRACT-INFO-TIN-INPUT locatorName="xpath">//input[@name='lastName']</CONTRACT-INFO-TIN-INPUT>
+    	<CONTRACT-INFO-SELECT-CNTR-GRP-DDN locatorName="xpath">//div[@id='select-contractRow_0']</CONTRACT-INFO-SELECT-CNTR-GRP-DDN>
+    	<CONTRACT-INFO-PRACTICE-START-DATE locatorName="xpath">//input[@data-id='contract-info-practice-start-date-input-field']</CONTRACT-INFO-PRACTICE-START-DATE>
+    	
+    	<SUPV-LNAME locatorName="name">supervisingLastName</SUPV-LNAME>
+    	<SUPV-FNAME locatorName="name">supervisingFirstName</SUPV-FNAME>
+    	<SUPV-NPI locatorName="name">supervisingNpi</SUPV-NPI>
+    	<NPI-ERR-MSG-SUPV locatorName="cssSelector">p[data-id="supervisingNpi-error-msg"]</NPI-ERR-MSG-SUPV>
+    	<SUPV-SPECIALTY-DDN locatorName="xpath">//div[@data-id='rfp-pract-info-specialty-list-s']</SUPV-SPECIALTY-DDN>
+    	<SUPV-SPCLTY locatorName="cssSelector">div[data-id="rfp-pract-info-specialty-list-s"]</SUPV-SPCLTY>
+    	<SUPV-NPI locatorName="name">supervisingNpi</SUPV-NPI>
+    	<NPI-ERR-MSG-SUPV locatorName="cssSelector">p[data-id="supervisingNpi-error-msg"]</NPI-ERR-MSG-SUPV>
+    	<SUPV-SPECIALTY-DDN locatorName="cssSelector">div[data-id="rfp-pract-info-specialty-list-s"]</SUPV-SPECIALTY-DDN>
+   		<SUPV-SPECIALTY-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</SUPV-SPECIALTY-DDN-LIST>
+    	<LOCATIONS-BILLING-ROW locatorName="xpath">//tr[@data-id='location-row-bill']</LOCATIONS-BILLING-ROW>
+    	<LOCATIONS-PLSV-ROW locatorName="xpath">//tr[@data-id='location-row-plsv']</LOCATIONS-PLSV-ROW>
+    	<LOCATIONS-CRED-ROW locatorName="xpath">//tr[@data-id='location-row-cred']</LOCATIONS-CRED-ROW>
+    	<LOCATIONS-ADD-ICON locatorName="xpath">//button[@data-id='location-add-icon']</LOCATIONS-ADD-ICON>
+    	<LOCATIONS-ADD-LOCATION_TITLE locatorName="xpath">//div[@data-id='add-location-dialog-title']</LOCATIONS-ADD-LOCATION_TITLE>
+    	<LOCATIONS-PRIMARY-PRACT-STATE-DEFAULT locatorName="xpath">//div[@data-id='rfp-location-primary-practice-state']</LOCATIONS-PRIMARY-PRACT-STATE-DEFAULT>
+    	<SUBMIT_RFP_BTN locatorName="xpath">//button[@data-id='submit-rfp-btn']</SUBMIT_RFP_BTN>
+    	<ACK_SUBMIT_WINDOW_TITLE locatorName="xpath">//div[@data-id='submission-dialog-title']</ACK_SUBMIT_WINDOW_TITLE>
+   		<LOCATIONS-EDIT-ICON locatorName="xpath">//button[@data-id='location-edit-icon']</LOCATIONS-EDIT-ICON>
+   		<LOCATIONS-EDIT-LOCATION_TITLE locatorName="xpath">//div[@data-id='edit-location-dialog-title']</LOCATIONS-EDIT-LOCATION_TITLE>
+   		<LOCATIONS-CRED-ADD-ICON locatorName="xpath">//tr[@data-id='location-row-cred']//button[@data-id='location-add-icon']</LOCATIONS-CRED-ADD-ICON>
+   		<LOCATIONS-BLNG-ADD-ICON locatorName="xpath">//tr[@data-id='location-row-bill']//button[@data-id='location-add-icon']</LOCATIONS-BLNG-ADD-ICON>
+   		<LOCATIONS-PLSV-ADD-ICON locatorName="xpath">//tr[@data-id='location-row-plsv']//button[@data-id='location-add-icon']</LOCATIONS-PLSV-ADD-ICON> 
+   		<LOCATIONS-CRED-EDIT-ICON locatorName="xpath">//tr[@data-id='location-row-cred']//button[@data-id='location-edit-icon']</LOCATIONS-CRED-EDIT-ICON>
+   		<LOCATIONS-BLNG-EDIT-ICON locatorName="xpath">//tr[@data-id='location-row-bill']//button[@data-id='location-edit-icon']</LOCATIONS-BLNG-EDIT-ICON>
+   		<LOCATIONS-PLSV-EDIT-ICON locatorName="xpath">//tr[@data-id='location-row-plsv']//button[@data-id='location-edit-icon']</LOCATIONS-PLSV-EDIT-ICON>
+   		<UPDATED-ADRS-TXT locatorName="xpath">//tr[@data-id='location-row-$value']</UPDATED-ADRS-TXT>
+   </RFPPage>
+   
+   <AddAffiliatedHospitalPage>
+		<HSPTLNAME-TXT locatorName="name">hospitalName</HSPTLNAME-TXT>
+		<PRVLG-DDN locatorName="xpath">//div[@data-id='add-hospital-privilege-input']</PRVLG-DDN>
+		<PRVLG-DDN-SELECTED locatorName="xpath">//div[@id='select-privilegeLevel']</PRVLG-DDN-SELECTED>
+		<CANCEL-BTN locatorName="xpath">//button[@data-id='add-hospital-dialog-cancel-btn']</CANCEL-BTN>
+		<ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-BTN>
+		<CLOSE-ICON locatorName="xpath">//button[@data-id='add-hospital-dialog-close-icon']</CLOSE-ICON>
+		<ALL-FLDS-REQ-LBL locatorName="xpath">//h6[text()='$value']/span[text()='*']</ALL-FLDS-REQ-LBL>
+		<PRVLG-DDN-LIST-Items locatorName="cssSelector">ul[role='listbox'] li </PRVLG-DDN-LIST-Items>
+		<ADMITNG-TXT-LBL locatorName="xpath">//h6[text()='$tailVal']/span[text()='$HdrVal']</ADMITNG-TXT-LBL>
+		<LASTNAME-ADMTNG locatorName="name">lastName</LASTNAME-ADMTNG>
+		<FIRSTNAME-ADMTNG locatorName="name">firstName</FIRSTNAME-ADMTNG>
+		<MIDDLENAME-ADMTNG locatorName="name">middleName</MIDDLENAME-ADMTNG>
+		<SPECIALTY-ADMTNG-DDN locatorName="xpath">//div[@data-id='add-hospital-specialty-input']</SPECIALTY-ADMTNG-DDN>
+		<SPECIALTY-ADMTNG-DDN-SELCTD locatorName="id">select-specialty</SPECIALTY-ADMTNG-DDN-SELCTD>
+		<SPCLTY-DDN-ADMTNG-LIST-Items locatorName="cssSelector">ul[role='listbox'] li </SPCLTY-DDN-ADMTNG-LIST-Items>
+		<NPI-ADMTNG-TXT locatorName="name">npi</NPI-ADMTNG-TXT>
+		<NPI-ERR-MSG locatorName="cssSelector">p[data-id='npi-error-msg']</NPI-ERR-MSG>
+		<ADMTNG-PRVDR-PRVLG-MSG locatorName="xpath">//h6[@data-id='add-hospital-admitting-provider-msg']</ADMTNG-PRVDR-PRVLG-MSG>
+   </AddAffiliatedHospitalPage>
+   
+   <LICENSEPAGE>
+    	<LICENSE-HEADER locatorName="cssSelector">h6[data-id='']</LICENSE-HEADER>
+    	<ADD-LICENSE-ICON locatorName="cssSelector">h6[data-id='']</ADD-LICENSE-ICON>
+    	<ADD-LICENSE-BTN locatorName="cssSelector"></ADD-LICENSE-BTN>
+   </LICENSEPAGE>
+   
+   <AddLicensesPage>
+   		<ADD-LICENSE-HEADER locatorName="cssSelector">div[data-id='add-license-dialog-title']</ADD-LICENSE-HEADER>
+   		<ALL-FIELDS-REQUIRED-TXT locatorName="cssSelector">h6[data-id='required-msg']</ALL-FIELDS-REQUIRED-TXT>
+   		<LICENSE-TYPE-HEADER locatorName="xpath">//label[text()='License Type']</LICENSE-TYPE-HEADER>
+   		<LICENSE-NUMBER-HEADER locatorName="xpath">//label[text()='License Number']</LICENSE-NUMBER-HEADER>
+   		<ADD-LICENSE-CANCEL-BTN locatorName="xpath">//button[@data-id='dialog-cancel-btn']</ADD-LICENSE-CANCEL-BTN>
+   		<ADD-LICENSE-ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-LICENSE-ADD-BTN>
+   		<ADD-LICENSE-X-BTN locatorName="cssSelector">button[data-id='close-icon']</ADD-LICENSE-X-BTN>
+   		<LICENSE-STATE-HEADER locatorName="xpath">//label[text()='State']</LICENSE-STATE-HEADER>
+   		<ISSUE-DATE-HEADER locatorName="xpath">//label[text()='Issue Date']</ISSUE-DATE-HEADER>
+   		<EXPIRATION-DATE-HEADER locatorName="xpath">//label[text()='Expiration Date']</EXPIRATION-DATE-HEADER>
+   		<ADD-LICENSE-TYPE-DDN locatorName="cssSelector">div[id='select-licenseType']</ADD-LICENSE-TYPE-DDN>
+   		<ADD-LICENSE-TYPE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LICENSE-TYPE-DDN-LIST>
+        <ADD-LICENSE-NUMBER-TXT locatorName="xpath">//div[@data-id='rfp-license-num']/input</ADD-LICENSE-NUMBER-TXT>
+        <ADD-LICENSE-ISSUE-DATE-TXT locatorName="xpath">//div[@data-id='rfp-license-issue-dt']/input</ADD-LICENSE-ISSUE-DATE-TXT>
+        <ADD-LICENSE-EXPIRATION-DATE-TXT locatorName="xpath">//div[@data-id='rfp-license-exp-dt']/input</ADD-LICENSE-EXPIRATION-DATE-TXT>
+        <ADD-LICENSE-STATE-DDN locatorName="cssSelector">div[id='select-usState']</ADD-LICENSE-STATE-DDN>
+        <ADD-LICENSE-STATE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LICENSE-STATE-DDN-LIST>
+   </AddLicensesPage>
+   
+   <EditAffiliatedHospitalPage>
+		<HSPTLNAME-TXT locatorName="name">hospitalName</HSPTLNAME-TXT>
+		<PRVLG-DDN locatorName="xpath">//div[@data-id='add-hospital-privilege-input']</PRVLG-DDN>
+		<PRVLG-DDN-SELECTED locatorName="xpath">//div[@id='select-privilegeLevel']</PRVLG-DDN-SELECTED>
+		<CANCEL-BTN locatorName="xpath">//button[@data-id='add-hospital-dialog-cancel-btn']</CANCEL-BTN>
+		<ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-BTN>
+		<CLOSE-ICON locatorName="xpath">//button[@data-id='add-hospital-dialog-close-icon']</CLOSE-ICON>
+		<ALL-FLDS-REQ-LBL locatorName="xpath">//h6[text()='$value']/span[text()='*']</ALL-FLDS-REQ-LBL>
+		<PRVLG-DDN-LIST-Items locatorName="cssSelector">ul[role='listbox'] li </PRVLG-DDN-LIST-Items>
+		<ADMITNG-TXT-LBL locatorName="xpath">//h6[text()='$tailVal']/span[text()='$HdrVal']</ADMITNG-TXT-LBL>
+		<LASTNAME-ADMTNG locatorName="name">lastName</LASTNAME-ADMTNG>
+		<FIRSTNAME-ADMTNG locatorName="name">firstName</FIRSTNAME-ADMTNG>
+		<MIDDLENAME-ADMTNG locatorName="name">middleName</MIDDLENAME-ADMTNG>
+		<SPECIALTY-ADMTNG-DDN locatorName="xpath">//div[@data-id='add-hospital-specialty-input']</SPECIALTY-ADMTNG-DDN>
+		<SPECIALTY-ADMTNG-DDN-SELCTD locatorName="id">select-specialty</SPECIALTY-ADMTNG-DDN-SELCTD>
+		<SPCLTY-DDN-ADMTNG-LIST-Items locatorName="cssSelector">ul[role='listbox'] li </SPCLTY-DDN-ADMTNG-LIST-Items>
+		<NPI-ADMTNG-TXT locatorName="name">npi</NPI-ADMTNG-TXT>
+		<NPI-ERR-MSG locatorName="cssSelector">p[data-id='npi-error-msg']</NPI-ERR-MSG>
+		<ADMTNG-PRVDR-PRVLG-MSG locatorName="xpath">//h6[@data-id='add-hospital-admitting-provider-msg']</ADMTNG-PRVDR-PRVLG-MSG>
+		<LASTNAME-ADMTNG-EDT locatorName="xpath">//div[@data-id="add-hospital-lname-input"]/input</LASTNAME-ADMTNG-EDT>
+		<FIRSTNAME-ADMTNG-EDT locatorName="xpath">//div[@data-id="add-hospital-fname-input"]/input</FIRSTNAME-ADMTNG-EDT>
+		<MIDDLENAME-ADMTNG-EDT locatorName="xpath">//div[@data-id="add-hospital-mname-input"]/input</MIDDLENAME-ADMTNG-EDT>
+		<SPECIALTY-ADMTNG-DDN-EDT locatorName="xpath">//div[@data-id='add-hospital-specialty-input']</SPECIALTY-ADMTNG-DDN-EDT>
+		<NPI-ADMTNG-TXT-EDT locatorName="xpath">//div[@data-id="add-hospital-npi-input"]/input</NPI-ADMTNG-TXT-EDT>
+		<NPI-ERR-MSG-EDT locatorName="cssSelector">p[data-id="admittingProviderNPI-error-msg"]</NPI-ERR-MSG-EDT>
+   </EditAffiliatedHospitalPage>
+   
+   <DeleteAffiliatedHospitalPage>
+   <CONFRM-DLG-TITLE locatorName="xpath">//div[@data-id='confirmation-dialog-title']</CONFRM-DLG-TITLE>
+   <CONFRM-DLG-Text locatorName="xpath">//h6[@data-id='confirmation-dialog-text']</CONFRM-DLG-Text>
+   <CONFRM-DLG-Cancel-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-cancel-btn']</CONFRM-DLG-Cancel-Btn>
+  <CONFRM-DLG-Confirm-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-continue-btn']</CONFRM-DLG-Confirm-Btn>
+   </DeleteAffiliatedHospitalPage>
+   
+   <EditLicensesPage>
+   		<ADD-LICENSE-HEADER locatorName="cssSelector">div[data-id='add-license-dialog-title']</ADD-LICENSE-HEADER>
+   		<ALL-FIELDS-REQUIRED-TXT locatorName="cssSelector">h6[data-id='required-msg']</ALL-FIELDS-REQUIRED-TXT>
+   		<LICENSE-TYPE-HEADER locatorName="xpath">//label[text()='License Type']</LICENSE-TYPE-HEADER>
+   		<LICENSE-NUMBER-HEADER locatorName="xpath">//label[text()='License Number']</LICENSE-NUMBER-HEADER>
+   		<ADD-LICENSE-CANCEL-BTN locatorName="xpath">//button[@data-id='dialog-cancel-btn']</ADD-LICENSE-CANCEL-BTN>
+   		<ADD-LICENSE-ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-LICENSE-ADD-BTN>
+   		<ADD-LICENSE-X-BTN locatorName="cssSelector">button[data-id='close-icon']</ADD-LICENSE-X-BTN>
+   		<LICENSE-STATE-HEADER locatorName="xpath">//label[text()='State']</LICENSE-STATE-HEADER>
+   		<ISSUE-DATE-HEADER locatorName="xpath">//label[text()='Issue Date']</ISSUE-DATE-HEADER>
+   		<EXPIRATION-DATE-HEADER locatorName="xpath">//label[text()='Expiration Date']</EXPIRATION-DATE-HEADER>
+   		<ADD-LICENSE-TYPE-DDN locatorName="cssSelector">div[id='select-licenseType']</ADD-LICENSE-TYPE-DDN>
+   		<ADD-LICENSE-TYPE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LICENSE-TYPE-DDN-LIST>
+        <ADD-LICENSE-NUMBER-TXT locatorName="xpath">//div[@data-id='rfp-license-num']/input</ADD-LICENSE-NUMBER-TXT>
+        <ADD-LICENSE-ISSUE-DATE-TXT locatorName="xpath">//div[@data-id='rfp-license-issue-dt']/input</ADD-LICENSE-ISSUE-DATE-TXT>
+        <ADD-LICENSE-EXPIRATION-DATE-TXT locatorName="xpath">//div[@data-id='rfp-license-exp-dt']/input</ADD-LICENSE-EXPIRATION-DATE-TXT>
+        <ADD-LICENSE-STATE-DDN locatorName="cssSelector">div[id='select-usState']</ADD-LICENSE-STATE-DDN>
+        <ADD-LICENSE-STATE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LICENSE-STATE-DDN-LIST>
+   </EditLicensesPage>
+   
+    <DeleteLicensePage>
+   <CONFRM-DLG-TITLE locatorName="xpath">//div[@data-id='confirmation-dialog-title']</CONFRM-DLG-TITLE>
+   <CONFRM-DLG-Text locatorName="xpath">//h6[@data-id='confirmation-dialog-text']</CONFRM-DLG-Text>
+   <CONFRM-DLG-Cancel-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-cancel-btn']</CONFRM-DLG-Cancel-Btn>
+  <CONFRM-DLG-Confirm-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-continue-btn']</CONFRM-DLG-Confirm-Btn>
+   </DeleteLicensePage>
+   
+    <DeleteLicensePage>
+   <CONFRM-DLG-TITLE locatorName="xpath">//div[@data-id='confirmation-dialog-title']</CONFRM-DLG-TITLE>
+   <CONFRM-DLG-Text locatorName="xpath">//h6[@data-id='confirmation-dialog-text']</CONFRM-DLG-Text>
+   <CONFRM-DLG-Cancel-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-cancel-btn']</CONFRM-DLG-Cancel-Btn>
+  <CONFRM-DLG-Confirm-Btn locatorName="xpath">//button[@data-id='confirmation-dialog-continue-btn']</CONFRM-DLG-Confirm-Btn>
+   </DeleteLicensePage>
+   
+   <AddLocationPage>
+   		<BILLING-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-bill']//input</BILLING-CHKBOX>
+   		<PLSV-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-plsv']//input</PLSV-CHKBOX>
+   		<CRED-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-cred']//input</CRED-CHKBOX>
+   		<STRT-ADRS-Txt locatorName="xpath">//div[@data-id='rfp-location-address']//input</STRT-ADRS-Txt>
+   		<CITY-Txt locatorName="xpath">//div[@data-id='rfp-location-city']//input</CITY-Txt>
+   		<STATE-DDN locatorName="id">select-usState</STATE-DDN>
+   		<ZIP-TXT locatorName="xpath">//div[@data-id='rfp-location-zip']//input</ZIP-TXT>
+   		<PHONE-TXT locatorName="xpath">//div[@data-id='rfp-location-phone']//input</PHONE-TXT>
+   		<FAX-TXT locatorName="xpath">//div[@data-id='rfp-location-fax']//input</FAX-TXT>
+   		<CANCEL-BTN locatorName="xpath">//button[@data-id='dialog-cancel-btn']</CANCEL-BTN>
+   		<ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-BTN>
+   		<CLOSE-ICON locatorName="xpath">//button[@data-id='close-icon']</CLOSE-ICON>
+   		<ADD-LOCATION-STATE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LOCATION-STATE-DDN-LIST>
+   		<SAVE-BTN locatorName="xpath">//button[@data-id='dialog-edit-btn']</SAVE-BTN>
+   </AddLocationPage>
+   
+   <AcknowledgementAndSubmitPage>
+   <Message_Text locatorName="xpath">//h6[text()='$value']</Message_Text>
+   <Provider_Name_Text locatorName="xpath">//h5[text()='$value']</Provider_Name_Text>
+   <HereBy_ChkBox locatorName="xpath">//input[@name='attestationCheckbox']</HereBy_ChkBox>
+   <AttestorName_TxtBox locatorName="name">submitterName</AttestorName_TxtBox>
+   <Cancel_Btn locatorName="xpath">//button[@data-id='submission-dialog-cancel-btn']</Cancel_Btn>
+   <Add_Btn locatorName="xpath">//button[@data-id='submission-dialog-continue-btn']</Add_Btn>
+   <REF_NUM_TXT locatorName="xpath">//h6[@data-id='rfp-success-reference-number-submission-dialog-text']</REF_NUM_TXT>
+   </AcknowledgementAndSubmitPage>
+   
+   <ContactUsPage>
+   <CONTACT-US-CONTENT-SECTION locatorName="xpath">//div[@data-id='contact-us-dialog-content']</CONTACT-US-CONTENT-SECTION>
+   <CRED-NOT-ALLOWED-ERR-ICON locatorName="cssSelector">svg[data-id='cred-not-allowed-error-icon']</CRED-NOT-ALLOWED-ERR-ICON>
+   <CRED-NOT-ALLOWED-INFO-MSG locatorName="cssSelector">span[data-id="cred-not-allwed-info-msg"]</CRED-NOT-ALLOWED-INFO-MSG>
+   <CRED-NOT-ALLOWED-CALL-US-INFO-MSG locatorName="cssSelector">h6[data-id="cred-not-allowed-call-us-info-msg"]</CRED-NOT-ALLOWED-CALL-US-INFO-MSG>
+   <CRED-NOT-ALLOWED-PHONE-NUM locatorName="cssSelector">span[data-id="cred-not-allowed-phone-num"]</CRED-NOT-ALLOWED-PHONE-NUM>
+   <CRED-NOT-ALLOWED-PHONE-ICON locatorName="cssSelector">svg[data-id="cred-not-allowed-phone-icon"]</CRED-NOT-ALLOWED-PHONE-ICON>
+   <CRED-DECISION-CLOSE-BTN locatorName="cssSelector">button[data-id='dialog-cancel-btn']</CRED-DECISION-CLOSE-BTN>
+   </ContactUsPage>
+   
+   <EditLocationPage>
+   		<BILLING-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-bill']//input</BILLING-CHKBOX>
+   		<PLSV-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-plsv']//input</PLSV-CHKBOX>
+   		<CRED-CHKBOX locatorName="xpath">//label[@data-id='rfp-location-address-type-cred']//input</CRED-CHKBOX>
+   		<STRT-ADRS-Txt locatorName="xpath">//div[@data-id='rfp-location-address']//input</STRT-ADRS-Txt>
+   		<CITY-Txt locatorName="xpath">//div[@data-id='rfp-location-city']//input</CITY-Txt>
+   		<STATE-DDN locatorName="id">select-usState</STATE-DDN>
+   		<ZIP-TXT locatorName="xpath">//div[@data-id='rfp-location-zip']//input</ZIP-TXT>
+   		<PHONE-TXT locatorName="xpath">//div[@data-id='rfp-location-phone']//input</PHONE-TXT>
+   		<FAX-TXT locatorName="xpath">//div[@data-id='rfp-location-fax']//input</FAX-TXT>   		
+   		<CANCEL-BTN locatorName="xpath">//button[@data-id='dialog-cancel-btn']</CANCEL-BTN>
+   		<ADD-BTN locatorName="xpath">//button[@data-id='dialog-add-btn']</ADD-BTN>
+   		<CLOSE-ICON locatorName="xpath">//button[@data-id='close-icon']</CLOSE-ICON>
+   		<ADD-LOCATION-STATE-DDN-LIST locatorName="cssSelector">ul[role='listbox'] li</ADD-LOCATION-STATE-DDN-LIST>
+   		<SAVE-BTN locatorName="xpath">//button[@data-id='dialog-edit-btn']</SAVE-BTN>
+   </EditLocationPage>
+   
+</OR>
